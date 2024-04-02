@@ -35,9 +35,10 @@ export class CartElements {
       get OrderConfirmation() {
         return cy.get('.sweet-alert');
       },
+
+      get OrderInfo() {
+        return cy.get('p.lead.text-muted');
+      },
     };
   }
 }
-
-
-

@@ -10,40 +10,38 @@ before(function () {
 });
 
 it("Place 2 products order with a created a user", function () {
-  // Ensure the testdata fixture is loaded
-  expect(this.testdata).to.exist;
+  
+  // Login User
+  CommonPageHelper.clickOnLoginOption();
+  LoginHelper.insertUsername(this.testdata.username);
+  LoginHelper.insertPassword(this.testdata.password);
+  LoginHelper.clickOnLoginButton();
+  CommonPageHelper.verifyLoggedUser(this.testdata.username);
 
-    // Login User
-    CommonPageHelper.clickOnLoginOption();
-    LoginHelper.insertUsername(this.testdata.username);
-    LoginHelper.insertPassword(this.testdata.password);
-    LoginHelper.clickOnLoginButton();
-    CommonPageHelper.verifyLoggedUser(this.testdata.username);
 
-    // Add Cellphone to cart
-    CommonPageHelper.getProduct(this.testdata.cellPhoneName);
-    CommonPageHelper.getProductNameTittle(this.testdata.cellPhoneName);
-    CommonPageHelper.AddToCardButtonIsVisible();
-    CommonPageHelper.clickAddToCardButton();
+  // Add Cellphone to cart
+  CommonPageHelper.getProduct(this.testdata.product1);
+  CommonPageHelper.getProductNameTittle(this.testdata.product1);
+  CommonPageHelper.AddToCardButtonIsVisible();
+  CommonPageHelper.clickAddToCardButton();
 
-    // // Add Laptop to cart
-    CommonPageHelper.clickOnHomeOption();
-    CommonPageHelper.clickOnLaptopsOption();
-    CommonPageHelper.getProduct(this.testdata.laptopName);
-    CommonPageHelper.getProductNameTittle(this.testdata.laptopName);
-    CommonPageHelper.AddToCardButtonIsVisible();
-    CommonPageHelper.clickAddToCardButton();
+  // // Add Laptop to cart
+  CommonPageHelper.clickOnHomeOption();
+  CommonPageHelper.clickOnLaptopsOption();
+  CommonPageHelper.getProduct(this.testdata.product2);
+  CommonPageHelper.getProductNameTittle(this.testdata.product2);
+  CommonPageHelper.AddToCardButtonIsVisible();
+  CommonPageHelper.clickAddToCardButton();
 
-    // // Place order
-    CommonPageHelper.clickOnCartOption();
-    CartHelper.clickPlaceOrderButton();
-    CartHelper.insertName(this.testdata.user_name);
-    CartHelper.insertCountry(this.testdata.country);
-    CartHelper.insertCity(this.testdata.city);
-    CartHelper.insertCreditCard(this.testdata.creditCard);
-    CartHelper.insertMonth(this.testdata.month);
-    CartHelper.insertYear(this.testdata.year);
-    CartHelper.clickPurchaseButton();
-    CartHelper.confirmationOrder();
-  });
-// });
+  // // Place order
+  CommonPageHelper.clickOnCartOption();
+  CartHelper.clickPlaceOrderButton();
+  CartHelper.insertName(this.testdata.user_name);
+  CartHelper.insertCountry(this.testdata.country);
+  CartHelper.insertCity(this.testdata.city);
+  CartHelper.insertCreditCard(this.testdata.creditCard);
+  CartHelper.insertMonth(this.testdata.month);
+  CartHelper.insertYear(this.testdata.year);
+  CartHelper.clickPurchaseButton();
+  CartHelper.confirmationOrder();
+});

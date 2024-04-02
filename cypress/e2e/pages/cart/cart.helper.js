@@ -35,6 +35,24 @@ export class CartHelper {
 
   // Confirmation  place order
   static confirmationOrder() {
-    CartElements.elements.OrderConfirmation.should('contain', 'Thank you for your purchase!' )
+    CartElements.elements.OrderConfirmation.should(
+      "contain",
+      "Thank you for your purchase!"
+    );
+  }
+
+  static confirmationOrder() {
+    CartElements.elements.OrderConfirmation.should(
+      "contain",
+      "Thank you for your purchase!"
+    );
+  }
+
+  // Order assertions
+  static confirmationOrder(totalPrice) {
+    CartElements.elements.OrderConfirmation.should(
+      "contain",
+      "Thank you for your purchase!"
+    );
   }
 }
