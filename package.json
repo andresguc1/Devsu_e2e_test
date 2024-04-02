@@ -4,7 +4,8 @@
   "description": "Devsu test for Automation Engineer",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run"
+    "test-ui": "npx cypress open",
+    "test-terminal": "npx cypress run"
   },
   "keywords": [
     "Devsu",
