@@ -1,0 +1,10 @@
+After successfully running the test you can conclude:
+
+1. The test has successfully validated the basic functionality of a purchase flow on the DemoBlaze website.
+
+2. POM (Page Object Model) works correctly in the test implementation which indicates that it can be used to 
+   guarantee the ability to automate repetitive processes on the website, which is very useful since the page 
+   can contain and create at level of products offered in the future.
+
+3. The test validates the entire flow of the purchasing process, from login to order confirmation, ensuring 
+   that users can complete their transactions without problems.

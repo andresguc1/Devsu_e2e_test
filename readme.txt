@@ -30,5 +30,5 @@
     Ensure Cypress is installed and configured properly.
 
 * Execute the test:
-    npm run test-ui
-    npm run test-terminal
+    npx cypress open
+    npx cypress run
